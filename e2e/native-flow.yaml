@@ -1,0 +1,20 @@
+# flow.yaml
+
+appId: com.ludwigw.uniapp
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "Create post" # or any other selector
+    timeout: 20000
+- runFlow:
+    when:
+      visible: "Development servers"
+    commands:
+      - tapOn:
+          point: 50%,22%
+      - tapOn: "Continue"
+      - tapOn:
+          point: "94%,43%"
+
+- tapOn: "Create post"
+- assertVisible: "No title"

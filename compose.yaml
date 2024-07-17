@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    restart: unless-stopped
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_uni
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  postgres_uni:
+    ports:
+      - "5432:5432"
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=unistack123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
