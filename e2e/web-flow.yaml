@@ -1,0 +1,7 @@
+# flow.yaml
+
+appId: http://localhost:8081/
+---
+- launchApp
+- tapOn: "Create post"
+- assertVisible: "No title"

@@ -1,0 +1,16 @@
+{
+  "buildCommand": "prisma generate && prisma migrate deploy && npx tailwindcss -i ./src/global.css -o ./node_modules/.cache/nativewind/global.css.web.css && expo export -p web",
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/index.js": {
+      "runtime": "@vercel/node@3.0.11",
+      "includeFiles": "dist/server/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}

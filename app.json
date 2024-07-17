@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "uniapp",
+    "slug": "uniapp",
+    "scheme": "uniapp",
+    "userInterfaceStyle": "automatic",
+    "orientation": "portrait",
+    "version": "0.0.1",
+    "web": {
+      "output": "server",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ],
+      [
+        "expo-router",
+        {
+          "origin": "http://45.91.169.221:3000"
+        }
+      ],
+      "expo-build-properties"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "android": {
+      "package": "com.ludwigw.uniapp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.ludwigw.uniapp"
+    },
+    "extra": {
+      "router": {
+        "origin": "http://45.91.169.221:3000"
+      },
+      "eas": {
+        "projectId": "8fe53682-c3fc-4e72-b896-67ff1d8f9845"
+      }
+    },
+    "owner": "ludwigw"
+  }
+}
